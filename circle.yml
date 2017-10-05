@@ -1,0 +1,17 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t netrayil/sample-node .
+
+test:
+  override:
+    - docker run netrayil/sample-node npm test
+
+# Launch docker in LXC container as service
+
+# Build docker image as dependcy override
+
+# Run npm test in docker container and in test section of job
